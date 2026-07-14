@@ -1,6 +1,8 @@
-(# Job Portal — Full Stack (MERN))
+(## Job Portal — Full Stack (MERN))
 
 This repository contains a full-stack MERN job portal application: a React + Vite frontend (client/) and a Node.js + Express + MongoDB backend (server/).
+
+live demo: https://job-portal-mern-five-sigma.vercel.app/
 
 **Project:** Combined frontend and backend for a simple job portal supporting user authentication, job postings, applications, and a user dashboard.
 
@@ -109,10 +111,6 @@ If you'd like to contribute:
 1. Fork the repo and create a feature branch.
 2. Run the backend and frontend locally and add tests where applicable.
 3. Open a PR with a clear description of changes.
-
-License
-
-This project currently has no license declared. Add a `LICENSE` file if you intend to publish under a specific license.
 
 Contact
 
