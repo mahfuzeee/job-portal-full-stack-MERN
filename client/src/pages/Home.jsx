@@ -4,7 +4,8 @@ import api from "../api";
 
 const Home = () => {
   const { data, isLoading } = useJobs();
-  const jobs = [...data].slice(0, 4);
+
+  const jobs = Array.isArray(data) ? data.slice(0, 4) : [];
 
   return (
     <div>
