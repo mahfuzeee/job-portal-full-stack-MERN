@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
+import { useJobs } from "../hooks/useMyJobPost";
 import { Link } from "react-router-dom";
 import api from "../api";
 
 const Home = () => {
-  const [jobs, setJobs] = useState([]);
-
-  useEffect(() => {
-    api.get("/jobs").then((res) => setJobs(res.data.slice(0, 4))); // Latest 4 jobs
-  }, []);
+  const { data, isLoading } = useJobs();
+  const jobs = [...data].slice(0, 4);
 
   return (
     <div>
@@ -35,24 +32,28 @@ const Home = () => {
           Latest Job Listings
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {jobs.map((job) => (
-            <div
-              key={job._id}
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
-            >
-              <h3 className="text-xl font-bold text-gray-800">{job.title}</h3>
-              <p className="text-blue-600 mb-2">{job.company}</p>
-              <p className="text-gray-600">
-                {job.location} - {job.type}
-              </p>
-              <Link
-                to={`/jobs/${job._id}`}
-                className="text-blue-500 mt-4 inline-block hover:underline"
+          {isLoading ? (
+            <div>Loading...</div>
+          ) : (
+            jobs.map((job) => (
+              <div
+                key={job._id}
+                className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
               >
-                View Details
-              </Link>
-            </div>
-          ))}
+                <h3 className="text-xl font-bold text-gray-800">{job.title}</h3>
+                <p className="text-blue-600 mb-2">{job.company}</p>
+                <p className="text-gray-600">
+                  {job.location} - {job.type}
+                </p>
+                <Link
+                  to={`/jobs/${job._id}`}
+                  className="text-blue-500 mt-4 inline-block hover:underline"
+                >
+                  View Details
+                </Link>
+              </div>
+            ))
+          )}
         </div>
       </section>
 

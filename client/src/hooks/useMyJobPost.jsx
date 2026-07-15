@@ -11,3 +11,14 @@ export const useMyJobPost = () => {
     },
   });
 };
+
+export const useJobs = () => {
+  return useQuery({
+    queryKey: ["all-jobs"],
+    queryFn: async () => {
+      const { data } = await api.get("/jobs");
+
+      return data;
+    },
+  });
+};

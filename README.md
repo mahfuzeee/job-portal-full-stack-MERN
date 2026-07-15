@@ -1,8 +1,8 @@
-(## Job Portal — Full Stack (MERN))
+## Job Portal — Full Stack (MERN)
 
 This repository contains a full-stack MERN job portal application: a React + Vite frontend (client/) and a Node.js + Express + MongoDB backend (server/).
 
-live demo: https://job-portal-mern-five-sigma.vercel.app/
+**Live demo**: https://job-portal-mern-five-sigma.vercel.app/
 
 **Project:** Combined frontend and backend for a simple job portal supporting user authentication, job postings, applications, and a user dashboard.
 
@@ -34,7 +34,7 @@ npm install
 npm run dev
 ```
 
-Open the frontend URL reported by Vite. The client expects the backend API at `VITE_API_URL` (defaults to `http://localhost:5000/api`).
+Open the frontend URL reported by Vite. The client expects the backend API at `VITE_API_URL`
 
 **Tech Stack**
 
@@ -52,7 +52,7 @@ README.md        # This consolidated overview
 Client highlights
 
 - Built with Vite and React, uses `src/api.js` for Axios instance and JWT injection.
-- Environment variable: `VITE_API_URL` (defaults to `http://localhost:5000/api`).
+- Environment variable: `VITE_API_URL`.
 - Common scripts: `npm run dev`, `npm run build`, `npm run preview`.
 
 Server highlights
@@ -76,7 +76,7 @@ NODE_ENV=development
 - client/.env (example)
 
 ```
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http:.....
 ```
 
 Deployment notes (placeholders)
