@@ -8,7 +8,7 @@ const Jobs = () => {
   const [category, setCategory] = useState("All");
   const { data, isLoading } = useJobs();
 
-  const jobs = Array.isArray(data) ? data : [];
+  let jobs = Array.isArray(data) ? data : [];
 
   // Filter jobs based on search and category
   jobs = jobs.filter((job) => {
